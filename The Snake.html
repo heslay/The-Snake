@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		.box {
+			margin: 50px auto;
+			border: 1px solid #000;
+
+		}
+		.row {
+			display: flex;
+		}
+		.col {
+			border: 1px solid #ccc;
+			flex: 1;
+		}
+	</style>
+</head>
+<body>
+	<script src="./Js/Game.js"></script>
+	<script src="./Js/Food.js"></script>
+	<script src="./Js/Block.js"></script>
+	<script src="./Js/Snake.js"></script>
+	<script src="./Js/Map.js"></script>
+	<script>
+		//实例化对象
+		var block = new Block("./Images/block.png");
+		var map = new Map(10, 10, 300, 300);
+		var food = new Food(6, 2, "./Images/food.png");
+		var Snake = new Snake({
+			head: ['./Images/1.jpeg', './Images/2.jpeg', "./Images/3.jpeg", "./Images/4.jpeg"],
+			body: './Images/5.jpeg',
+			tail: ["./Images/6.jpeg", "./Images/7.jpeg", "./Images/8.jpeg", "./Images/9.jpeg"]
+
+		}, 10 ,10);
+		//将属性传递给Game类
+		var Game = new Game(Snake, map, food, block);
+
+	</script>
+</body>
+</html>
